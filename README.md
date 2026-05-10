@@ -41,7 +41,7 @@ El proyecto fue desarrollado bajo una arquitectura cliente-servidor utilizando R
 
 ---
 
-# 🏗️ Arquitectura del proyecto
+#  Arquitectura del proyecto
 
 ```bash
 ├── 📁 client
@@ -183,9 +183,9 @@ http://localhost:3000
 
 ---
 
-# 📷 Funcionalidades del sistema
+#  Funcionalidades del sistema
 
-## 📋 Registro de docentes
+##  Registro de docentes
 
 Permite registrar información académica y de contacto de docentes universitarios.
 
@@ -197,7 +197,7 @@ Actualiza datos existentes mediante formularios dinámicos.
 
 Permite eliminar registros de forma permanente.
 
-## 📡 Consumo de API REST
+## Consumo de API REST
 
 El frontend consume servicios REST desarrollados en Express.
 

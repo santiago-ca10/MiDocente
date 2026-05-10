@@ -1,0 +1,210 @@
+/* App.css - Estilo Profesional Gris Grafito */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Paleta de Colores */
+  --bg-page: #e9ecef;        /* Gris muy claro para el fondo de pantalla */
+  --card-bg: #262c31;        /* Gris Grafito para los contenedores */
+  --input-bg: #353b41;       /* Gris intermedio para los campos */
+  --accent-blue: #007bff;    /* Azul vibrante para el botón principal */
+  --edit-green: #28a745;     /* Verde para editar */
+  --delete-red: #dc3545;     /* Rojo para eliminar */
+  --text-light: #ffffff;     /* Blanco para textos sobre gris */
+  --text-muted: #adb5bd;     /* Gris claro para subtítulos */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  width: 95%;
+  max-width: 1300px;
+  padding: 40px 20px;
+}
+
+/* Tarjeta del Formulario */
+.form-card {
+  background-color: var(--card-bg);
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.form-card h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+/* Estructura de Filas Simétricas */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row.short {
+  justify-content: flex-start;
+}
+
+.form-row.short .form-group {
+  flex: 0 1 300px; /* Tamaño controlado para los campos de abajo */
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 180px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* Estilo de Inputs y Selects */
+.form-group input, 
+.form-group select {
+  background-color: var(--input-bg);
+  border: 1px solid #4a5157;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: var(--accent-blue);
+  background-color: #3e454c;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.form-group input::placeholder {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+/* Botón Registrar */
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn-register:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-register:active {
+  transform: translateY(0);
+}
+
+/* Estilo de la Tabla */
+.table-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.docentes-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #dfe6e9;
+}
+
+.docentes-table th {
+  background-color: #1e2429; /* Un tono más oscuro para el encabezado */
+  padding: 18px 15px;
+  text-align: left;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.docentes-table td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+
+.docentes-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Botones de Acción */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.btn-edit {
+  background-color: var(--edit-green);
+}
+
+.btn-delete {
+  background-color: var(--delete-red);
+}
+
+.btn-edit:hover, .btn-delete:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 1024px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .form-group {
+    width: 100%;
+  }
+}

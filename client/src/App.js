@@ -17,16 +17,9 @@ function App() {
 
   const [editIndex, setEditIndex] = useState(null);
 
-  // Función para capitalizar nombres
+  // Función para capitalizar texto sin bloquear espacios
   const capitalizarTexto = (texto) => {
-    return texto
-      .toLowerCase()
-      .split(' ')
-      .filter(palabra => palabra !== '')
-      .map(palabra =>
-        palabra.charAt(0).toUpperCase() + palabra.slice(1)
-      )
-      .join(' ');
+    return texto.replace(/\b\w/g, (letra) => letra.toUpperCase());
   };
 
   useEffect(() => {
@@ -35,15 +28,21 @@ function App() {
 
   const cargarDocentes = async () => {
     try {
+
       const response = await fetch('http://localhost:3001/docentes');
+
       const data = await response.json();
+
       setRegistros(data);
+
     } catch (error) {
+
       alert('Error al cargar los docentes: ' + error.message);
     }
   };
 
   const limpiarFormulario = () => {
+
     setNombre('');
     setCorreo('');
     setTelefono('');
@@ -71,6 +70,7 @@ function App() {
 
       // Actualizar un registro existente
       try {
+
         const docente = registros[editIndex];
 
         const response = await fetch(`http://localhost:3001/docentes/${docente.id}`, {
@@ -162,7 +162,9 @@ function App() {
         setRegistros(nuevosRegistros);
 
         if (editIndex === idx) {
+
           setEditIndex(null);
+
           limpiarFormulario();
         }
 
@@ -276,6 +278,7 @@ function App() {
           <div className="form-row short">
 
             <div className="form-group">
+
               <label>Dedicación:</label>
 
               <select
@@ -288,9 +291,11 @@ function App() {
                 <option value="Medio Tiempo">Medio Tiempo</option>
                 <option value="Cátedra">Cátedra</option>
               </select>
+
             </div>
 
             <div className="form-group">
+
               <label>Años de experiencia docente:</label>
 
               <input
@@ -299,6 +304,7 @@ function App() {
                 onChange={(e) => setAniosExperiencia(e.target.value)}
                 required
               />
+
             </div>
 
           </div>
@@ -329,7 +335,9 @@ function App() {
           </thead>
 
           <tbody>
+
             {registros.map((reg, idx) => (
+
               <tr key={idx}>
 
                 <td>{reg.nombre}</td>
@@ -359,7 +367,9 @@ function App() {
                 </td>
 
               </tr>
+
             ))}
+
           </tbody>
 
         </table>

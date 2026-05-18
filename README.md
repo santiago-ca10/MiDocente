@@ -13,7 +13,7 @@ El proyecto fue desarrollado bajo una arquitectura cliente-servidor utilizando R
 
 #  Demo del proyecto
 
-[![Ver video del proyecto](https://img.shields.io/badge/YouTube-Ver%20demostración-red?style=for-the-badge&logo=youtube)](AQUI_TU_LINK_DE_YOUTUBE)
+[![Ver video del proyecto](https://img.shields.io/badge/YouTube-Ver%20demostración-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=8f1729GPshw)
 
 ---
 
